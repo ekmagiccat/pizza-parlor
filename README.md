@@ -32,6 +32,20 @@ Test: "It should create a pizza with the user inputs."
 Code: pizza ("small, pepperoni, mushrooms")
 Expected Output: Pizza {toppings: "pepperoni", "mushrooms", size: "small"}
 
+Describe: function newPizza ()
+
+Test: "It should allow users to choose toppings and size"
+Code: newPizza ( )
+Expected Output:
+
+Describe:
+
+Test: "It should
+Code:
+Expected Output:
+
+Describe:
+
 Test: "It should
 Code:
 Expected Output:

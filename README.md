@@ -26,11 +26,11 @@ This website will allow users to create a pizza. They can select their pizza siz
 
 ## Tests
 
-Describe:
+Describe: function pizza ()
 
-Test: "It should
-Code:
-Expected Output:
+Test: "It should create a pizza with the user inputs."
+Code: pizza ("small, pepperoni, mushrooms")
+Expected Output: Pizza {toppings: "pepperoni", "mushrooms", size: "small"}
 
 Test: "It should
 Code:

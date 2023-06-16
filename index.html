@@ -10,7 +10,16 @@
   <body>
     <h1>Welcome to Eva's Pizza Parlor!</h1>
     <h3>Build Your Own Pizza</h3>
-    <p>Toppings:</p>
+    <p>Size:</p>
+    <form id="pizza-size" class="container">
+      <input type="radio" name="size" id="12" />
+      <label for="12">Small (12")</label><br />
+      <input type="radio" name="size" id="18" />
+      <label for="18">Medium (18")</label><br />
+      <input type="radio" name="size" id="30" />
+      <label for="30">Large (30")</label><br />
+    </form>
+    <p>Toppings (choose as many as you'd like):</p>
     <form id="pizza-toppings" class="container">
       <input type="checkbox" name="toppings" id="mozz" />
       <label for="mozz">Mozzerella</label><br />
@@ -26,6 +35,13 @@
       <label for="olive">Kalamata Olives</label><br />
       <input type="checkbox" name="toppings" id="pesto" />
       <label for="pesto">Pesto</label><br />
+      <input type="checkbox" name="toppings" id="onion" />
+      <label for="onion">Caramelized Onions</label><br />
+      <input type="checkbox" name="toppings" id="arugula" />
+      <label for="arugula">Arugula</label><br />
+      <input type="checkbox" name="toppings" id="anchovy" />
+      <label for="anchovy">Anchovies</label><br />
+      <button type="submit" id="btn" class="button">Submit Order</button>
     </form>
   </body>
 </html>

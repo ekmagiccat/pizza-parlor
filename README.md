@@ -1,4 +1,4 @@
-# Eva Kemp's Portfolio
+# Pizza Parlor
 
 #### **By Eva Kemp**
 
@@ -54,7 +54,7 @@ Expected Output:
 
 MIT License
 
-Copyright (c) _06/16/2023_ Eva Kemp
+Copyright (c) _06/19/2023_ Eva Kemp
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

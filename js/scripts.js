@@ -13,17 +13,29 @@ Pizza.prototype.chooseToppings = function () {
   return this.toppings;
 };
 
+Pizza.prototype.orderTotal = function () {
+  return this.toppings + this.size;
+};
+
 // UI Logic
 
 let myPizza = new Pizza();
 
-function getToppings() {
-  let toppings = document.getElementById("pizza-toppings").value;
-  for (i = 0; i < toppings.length; i++) {
-    if (toppings[i].checked) {
-      txt = txt + toppings[i].value + " ";
-    }
-  }
-  return (document.getElementById("pizza-order").value =
-    "You ordered a pizza with: " + txt);
+function getToppings(event) {
+  event.preventDefault();
+  const toppings = document.querySelectorAll("input[name=toppings]:checked");
+  const toppingsArray = Array.from(toppings);
+  toppingsArray.forEach(function (element) {
+    const paragraph = document.createElement("p");
+    paragraph.append(element.value);
+    document.body.append(paragraph);
+  });
 }
+//  return (document.getElementById("pizza-order").value =
+// "You ordered a pizza with: " + txt);
+
+window.addEventListener("load", function () {
+  document
+    .querySelector("form#pizza-toppings")
+    .addEventListener("submit", getToppings);
+});

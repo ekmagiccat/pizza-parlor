@@ -38,11 +38,11 @@ Test: "It should allow users to choose toppings and size"
 Code: newPizza ( )
 Expected Output:
 
-Describe:
+Describe: function getToppings ()
 
-Test: "It should
-Code:
-Expected Output:
+Test: "It should get the value of the toppings selected by a user and return what they have chosen"
+Code: getToppings("tom", "mozz", "pepp")
+Expected Output: "You ordered a pizza with tomato, mozzerella, and pepperoni."
 
 Describe:
 

@@ -31,11 +31,15 @@ function getToppings(event) {
     document.body.append(paragraph);
   });
 }
-//  return (document.getElementById("pizza-order").value =
-// "You ordered a pizza with: " + txt);
+
+function getSize(event) {
+  event.preventDefault();
+  const size = document.querySelectorAll("input[name=size]:checked").value;
+}
 
 window.addEventListener("load", function () {
   document
     .querySelector("form#pizza-toppings")
     .addEventListener("submit", getToppings);
+  document.getElementById("pizza-size").addEventListener("submit", getSize);
 });

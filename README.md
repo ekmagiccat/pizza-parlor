@@ -22,7 +22,7 @@ This website will allow users to create a pizza. They can select their pizza siz
 
 ## Known Bugs
 
-- tbd
+- None
 
 ## Tests
 
@@ -44,11 +44,11 @@ Test: "It should get the value of the toppings selected by a user and return wha
 Code: getToppings("tom", "mozz", "pepp")
 Expected Output: "You ordered a pizza with tomato, mozzerella, and pepperoni."
 
-Describe:
+Describe: function calculateOrderTotal()
 
-Test: "It should
-Code:
-Expected Output:
+Test: "It should calculate the total cost of a pizza based on the user's selections of size and toppings."
+Code: calculateOrderTotal("size=small", "toppings=pepperoni")
+Expected Output: Order total = $15.50
 
 ## License
 

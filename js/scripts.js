@@ -34,13 +34,9 @@ let myPizza = new Pizza();
 function getToppings(event) {
   event.preventDefault();
   const toppings = document.querySelectorAll("input[name=toppings]:checked");
-  const toppingsArray = Array.from(toppings);
-
-  toppingsArray.forEach(function (element) {
-    const paragraph = document.createElement("p");
-    paragraph.append(element.value);
-    document.body.append(paragraph);
-  });
+  if (toppings) {
+    myPizza.toppings = toppings.value;
+  }
 }
 
 function getSize(event) {
@@ -58,7 +54,14 @@ function calculateOrderTotal(event) {
   const toppingsPrice = myPizza.chooseToppings();
   const totalPrice = sizePrice + toppingsPrice;
 
-  console.log("Order Total: $" + totalPrice.toFixed(2)); // Output the order total to the console
+  console.log("Order Total: $" + totalPrice.toFixed(2));
+  document.querySelector("h3#order-total").innerText =
+    "Success! Your order total will be $" + totalPrice + ".";
+  document.querySelector("p#order-info").innerText =
+    "Thank you for your business!";
+  setTimeout(function () {
+    window.location.reload();
+  }, 5000);
 }
 
 window.addEventListener("load", function () {

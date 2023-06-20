@@ -1,3 +1,13 @@
-.hidden {
-  display: none;
+body {
+  background-color: rgba(250, 144, 134, 0.897);
+}
+h1 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+
+#order-info {
+  text-align: center;
 }

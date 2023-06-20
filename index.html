@@ -6,7 +6,7 @@
     <title>Eva's Pizza Parlor</title>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
-    <script src="js/scripts2.js"></script>
+    <script src="js/scripts.js"></script>
   </head>
   <body>
     <h1>Welcome to Eva's Pizza Parlor!</h1>
@@ -47,7 +47,7 @@
         name="toppings"
         id="mozz"
         value="Mozzerella"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="mozz">Mozzerella</label><br />
       <input
@@ -55,7 +55,7 @@
         name="toppings"
         id="feta"
         value="Feta"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="feta">Feta</label><br />
       <input
@@ -63,7 +63,7 @@
         name="toppings"
         id="pepp"
         value="Pepperoni"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="pepp">Pepperoni</label><br />
       <input
@@ -71,7 +71,7 @@
         name="toppings"
         id="tom"
         value="Tomato"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="tom">Tomato</label><br />
       <input
@@ -79,7 +79,7 @@
         name="toppings"
         id="mush"
         value="Mushrooms"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="mush">Mushrooms</label><br />
       <input
@@ -87,7 +87,7 @@
         name="toppings"
         id="olive"
         value="Olives"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="olive">Olives</label><br />
       <input
@@ -95,7 +95,7 @@
         name="toppings"
         id="pesto"
         value="Pesto"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="pesto">Pesto</label><br />
       <input
@@ -103,7 +103,7 @@
         name="toppings"
         id="onion"
         value="Caramelized Onions"
-        data-price=""
+        data-price=".50"
       />
       <label for="onion">Caramelized Onions</label><br />
       <input
@@ -111,7 +111,7 @@
         name="toppings"
         id="arugula"
         value="Arugula"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="arugula">Arugula</label><br />
       <input
@@ -119,13 +119,14 @@
         name="toppings"
         id="anchovy"
         value="Anchovies"
-        data-price=".5"
+        data-price=".50"
       />
       <label for="anchovy">Anchovies</label><br />
       <button type="submit" id="btn" class="button">Submit Order</button>
     </form>
-
-    <h3 class="hidden">Success!</h3>
-    <div id="orderTotal"></div>
+    <div>
+      <h3 id="order-total"></h3>
+      <p id="order-info"></p>
+    </div>
   </body>
 </html>

@@ -34,12 +34,20 @@ function getToppings(event) {
 
 function getSize(event) {
   event.preventDefault();
-  const size = document.querySelectorAll("input[name=size]:checked").value;
+  const size = document.querySelectorAll("input[name=size]:checked");
+  const sizeArray = Array.from(size);
+  sizeArray.forEach(function (element) {
+    const paragraph = document.createElement("p");
+    paragraph.append(element.value);
+    document.body.append(paragraph);
+  });
 }
 
 window.addEventListener("load", function () {
   document
-    .querySelector("form#pizza-toppings")
-    .addEventListener("submit", getToppings);
-  document.getElementById("pizza-size").addEventListener("submit", getSize);
+    .getElementById("pizzaSelections")
+    .addEventListener("submit", function (event) {
+      getSize(event);
+      getToppings(event);
+    });
 });

@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eva's Pizza Parlor</title>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" />
     <script src="js/scripts.js"></script>
   </head>
   <body>
     <h1>Welcome to Eva's Pizza Parlor!</h1>
     <h3>Build Your Own Pizza</h3>
-    <p>Size:</p>
+
     <form id="pizzaSelections" class="container">
+      <p>Size:</p>
       <input
         type="radio"
         name="size"
@@ -123,7 +125,7 @@
       <button type="submit" id="btn" class="button">Submit Order</button>
     </form>
 
-    <h3>Success!</h3>
+    <h3 class="hidden">Success!</h3>
     <p id="pizza-order"></p>
   </body>
 </html>

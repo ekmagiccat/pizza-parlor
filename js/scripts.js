@@ -1,66 +1,31 @@
 // Business Logic
-function Pizza(size, toppings, orderTotal) {
+function Pizza(size, toppings) {
   this.toppings = toppings;
   this.size = size;
-  this.orderTotal = orderTotal;
+  this.orderTotal = 0;
 }
 
 Pizza.prototype.chooseSize = function () {
-  this.size = document.querySelectorAll("input[name=size]:checked");
+  let sizePrice = 0;
+  const size = document.querySelector("input[name=size]:checked");
+
+  if (size) {
+    sizePrice = parseFloat(size.getAttribute("data-price"));
+  }
+
+  return sizePrice;
 };
 
 Pizza.prototype.chooseToppings = function () {
-  this.toppings = document.querySelectorAll("input[name=toppings]:checked");
-};
-
-Pizza.prototype.orderTotal = function () {
-  let total = 0;
   const toppings = document.querySelectorAll("input[name=toppings]:checked");
+  let toppingsPrice = 0;
 
   toppings.forEach(function (topping) {
-    const toppingPrice = parseFloat(topping.getAttribute("data-price"));
-    total += toppingPrice;
+    toppingsPrice += parseFloat(topping.getAttribute("data-price"));
   });
+
+  return toppingsPrice;
 };
-
-/* 
-
-      let toppingsPrice = document.querySelectorAll("input[name=toppings]:checked").getAttribute("data-price").value;
-    const toppingsPriceArray = Array.from(toppingsPrice);
-    toppingsPriceArray.forEach(function(number) {
-  return number + total;
-});
-
- window.totalIt= function(name) {
-  if(name == "product"){
-
-  var input = document.getElementsByName("product");
-  var total = 0;
-      for (var i = 0; i < input.length; i++) {
-        if (input[i].checked) {
-          total += 1;
-        }
-      }
-  if(total>=3){ total1 =  (total*29).toFixed(2);}
-  else{total1 =  (total*39).toFixed(2);}
-  }
-
-if(name == "dessert"){
-
-  var input = document.getElementsByName("dessert");
-  var total = 0;
-  for (var i = 0; i < input.length; i++) {
-    if (input[i].checked) {
-      total += parseFloat(input[i].value);
-    }
-  }
-
-  total2 =  total.toFixed(2);
-  }
-  grndTotal = parseInt(total2) + parseInt(total1);
-  document.getElementById("total").value = "$"+grndTotal ;
-
-} */
 
 // UI Logic
 
@@ -70,6 +35,7 @@ function getToppings(event) {
   event.preventDefault();
   const toppings = document.querySelectorAll("input[name=toppings]:checked");
   const toppingsArray = Array.from(toppings);
+
   toppingsArray.forEach(function (element) {
     const paragraph = document.createElement("p");
     paragraph.append(element.value);
@@ -79,40 +45,29 @@ function getToppings(event) {
 
 function getSize(event) {
   event.preventDefault();
-  const size = document.querySelectorAll("input[name=size]:checked");
-  const sizeArray = Array.from(size);
-  sizeArray.forEach(function (element) {
-    const paragraph = document.createElement("p");
-    paragraph.append(element.value);
-    document.body.append(paragraph);
-  });
+  const size = document.querySelector("input[name=size]:checked");
+
+  if (size) {
+    myPizza.size = size.value;
+  }
 }
 
-/* function calculateOrderTotal(event) {
-    let price = document.querySelectorAll("input[data-price]").value;
-    const size = document.querySelectorAll("input[name=size]:checked");
-    const toppings = document.querySelectorAll("input[name=toppings]:checked");
-    let totalPrice = 0;
-
-    if (size) {
-      const sizePrice = parseFloat(size.dataset.price);
-      totalPrice += sizePrice;
-    }
-
-    toppings.forEach(function(topping) {
-      const toppingPrice = parseFloat(topping.dataset.price);
-      totalPrice += toppingPrice;
-    });
-
-    return totalPrice;
-  }
-*/
-window.addEventListener("load", function (event) {
+function calculateOrderTotal(event) {
   event.preventDefault();
+  const sizePrice = myPizza.chooseSize();
+  const toppingsPrice = myPizza.chooseToppings();
+  const totalPrice = sizePrice + toppingsPrice;
+
+  console.log("Order Total: $" + totalPrice.toFixed(2)); // Output the order total to the console
+}
+
+window.addEventListener("load", function () {
   document
     .getElementById("pizzaSelections")
     .addEventListener("submit", function (event) {
+      event.preventDefault();
       getSize(event);
       getToppings(event);
+      calculateOrderTotal(event);
     });
 });

@@ -12,40 +12,113 @@
     <h3>Build Your Own Pizza</h3>
     <p>Size:</p>
     <form id="pizzaSelections" class="container">
-      <input type="radio" name="size" id="small" value="Small" />
-      <label for="small">Small (12")</label><br />
-      <input type="radio" name="size" id="medium" value="Medium" />
-      <label for="medium">Medium (18")</label><br />
-      <input type="radio" name="size" id="large" value="Large" />
-      <label for="large">Large (30")</label><br />
+      <input
+        type="radio"
+        name="size"
+        id="small"
+        value="Small"
+        data-price="15"
+      />
+      <label for="small">Small (12") - $15</label><br />
+      <input
+        type="radio"
+        name="size"
+        id="medium"
+        value="Medium"
+        data-price="20"
+      />
+      <label for="medium">Medium (18") - $20</label><br />
+      <input
+        type="radio"
+        name="size"
+        id="large"
+        value="Large"
+        data-price="32"
+      />
+      <label for="large">Large (30") - $32</label><br />
 
       <br />
 
-      <p>Toppings (choose as many as you'd like):</p>
-      <input type="checkbox" name="toppings" id="mozz" value="Mozzerella" />
+      <p>Toppings ($0.50 each, choose as many as you'd like):</p>
+      <input
+        type="checkbox"
+        name="toppings"
+        id="mozz"
+        value="Mozzerella"
+        data-price=".5"
+      />
       <label for="mozz">Mozzerella</label><br />
-      <input type="checkbox" name="toppings" id="feta" value="Feta" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="feta"
+        value="Feta"
+        data-price=".5"
+      />
       <label for="feta">Feta</label><br />
-      <input type="checkbox" name="toppings" id="pepp" value="Pepperoni" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="pepp"
+        value="Pepperoni"
+        data-price=".5"
+      />
       <label for="pepp">Pepperoni</label><br />
-      <input type="checkbox" name="toppings" id="tom" value="Tomato" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="tom"
+        value="Tomato"
+        data-price=".5"
+      />
       <label for="tom">Tomato</label><br />
-      <input type="checkbox" name="toppings" id="mush" value="Mushrooms" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="mush"
+        value="Mushrooms"
+        data-price=".5"
+      />
       <label for="mush">Mushrooms</label><br />
-      <input type="checkbox" name="toppings" id="olive" value="Olives" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="olive"
+        value="Olives"
+        data-price=".5"
+      />
       <label for="olive">Olives</label><br />
-      <input type="checkbox" name="toppings" id="pesto" value="Pesto" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="pesto"
+        value="Pesto"
+        data-price=".5"
+      />
       <label for="pesto">Pesto</label><br />
       <input
         type="checkbox"
         name="toppings"
         id="onion"
         value="Caramelized Onions"
+        data-price=""
       />
       <label for="onion">Caramelized Onions</label><br />
-      <input type="checkbox" name="toppings" id="arugula" value="Arugula" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="arugula"
+        value="Arugula"
+        data-price=".5"
+      />
       <label for="arugula">Arugula</label><br />
-      <input type="checkbox" name="toppings" id="anchovy" value="Anchovies" />
+      <input
+        type="checkbox"
+        name="toppings"
+        id="anchovy"
+        value="Anchovies"
+        data-price=".5"
+      />
       <label for="anchovy">Anchovies</label><br />
       <button type="submit" id="btn" class="button">Submit Order</button>
     </form>

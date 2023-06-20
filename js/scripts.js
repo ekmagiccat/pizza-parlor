@@ -6,7 +6,7 @@ function Pizza(size, toppings, orderTotal) {
 }
 
 Pizza.prototype.chooseSize = function () {
-  return this.size;
+  document.querySelectorAll("input[name=size]:checked") = this.size;
 };
 
 Pizza.prototype.chooseToppings = function () {
@@ -42,12 +42,33 @@ function getSize(event) {
     document.body.append(paragraph);
   });
 }
+  
+/* function calculateOrderTotal(event) {
+    let price = document.querySelectorAll("input[data-price]").value;
+    const size = document.querySelectorAll("input[name=size]:checked");
+    const toppings = document.querySelectorAll("input[name=toppings]:checked");
+    let totalPrice = 0;
 
-window.addEventListener("load", function () {
+    if (size) {
+      const sizePrice = parseFloat(size.dataset.price);
+      totalPrice += sizePrice;
+    }
+
+    toppings.forEach(function(topping) {
+      const toppingPrice = parseFloat(topping.dataset.price);
+      totalPrice += toppingPrice;
+    });
+
+    return totalPrice;
+  }
+*/ 
+window.addEventListener("load", function (event) {
+     event.preventDefault();
   document
     .getElementById("pizzaSelections")
     .addEventListener("submit", function (event) {
       getSize(event);
       getToppings(event);
     });
+   
 });
